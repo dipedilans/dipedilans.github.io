@@ -8,6 +8,7 @@ import { initHero } from './hero.js';
 import { initProjects } from './projects.js';
 import { initContact } from './contact.js';
 import { initSkills } from './skills.js';
+import { initTestimonials } from './testimonials.js';
 
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', async () => {
@@ -63,6 +64,7 @@ function initPageSpecific(page) {
             initHero();
             initSkills();
             initProjects();
+            initTestimonials();
             break;
         case 'projects':
             initProjects();
@@ -102,12 +104,12 @@ function getHeaderHTML() {
 
             <nav class="nav">
                 <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link">Home</a></li>
-                    <li><a href="about.html" class="nav__link">About</a></li>
-                    <li><a href="skills.html" class="nav__link">Skills</a></li>
-                    <li><a href="projects.html" class="nav__link">Projects</a></li>
-                    <li><a href="resume.html" class="nav__link">Resume</a></li>
-                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+                    <li><a href="skills.html" class="nav__link" data-i18n="nav.skills">Skills</a></li>
+                    <li><a href="projects.html" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="resume.html" class="nav__link" data-i18n="nav.resume">Resume</a></li>
+                    <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </nav>
 
@@ -141,12 +143,12 @@ function getHeaderHTML() {
         <!-- Mobile navigation -->
         <nav class="nav--mobile" id="mobileNav">
             <ul class="nav__list">
-                <li><a href="index.html" class="nav__link">Home</a></li>
-                <li><a href="about.html" class="nav__link">About</a></li>
-                <li><a href="skills.html" class="nav__link">Skills</a></li>
-                <li><a href="projects.html" class="nav__link">Projects</a></li>
-                <li><a href="resume.html" class="nav__link">Resume</a></li>
-                <li><a href="contact.html" class="nav__link">Contact</a></li>
+                <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+                <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+                <li><a href="skills.html" class="nav__link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="projects.html" class="nav__link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="resume.html" class="nav__link" data-i18n="nav.resume">Resume</a></li>
+                <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
             </ul>
         </nav>
     `;
@@ -180,17 +182,17 @@ function getFooterHTML() {
                 </div>
 
                 <div class="footer__section">
-                    <h3 class="footer__title">Quick Links</h3>
+                    <h3 class="footer__title" data-i18n="footer.quickLinks">Quick Links</h3>
                     <div class="footer__links">
-                        <a href="index.html" class="footer__link">Home</a>
-                        <a href="about.html" class="footer__link">About</a>
-                        <a href="projects.html" class="footer__link">Projects</a>
-                        <a href="contact.html" class="footer__link">Contact</a>
+                        <a href="index.html" class="footer__link" data-i18n="nav.home">Home</a>
+                        <a href="about.html" class="footer__link" data-i18n="nav.about">About</a>
+                        <a href="projects.html" class="footer__link" data-i18n="nav.projects">Projects</a>
+                        <a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact</a>
                     </div>
                 </div>
 
                 <div class="footer__section">
-                    <h3 class="footer__title">Connect</h3>
+                    <h3 class="footer__title" data-i18n="footer.connect">Connect</h3>
                     <div class="footer__links">
                         <a href="mailto:hello@diogosilva.dev" class="footer__link">hello@diogosilva.dev</a>
                         <span class="footer__link">Lisbon, Portugal</span>
@@ -199,7 +201,7 @@ function getFooterHTML() {
             </div>
 
             <div class="footer__bottom">
-                <p>&copy; ${new Date().getFullYear()} Diogo Silva. All rights reserved.</p>
+                <p>&copy; ${new Date().getFullYear()} Diogo Silva. <span data-i18n="footer.rights">All rights reserved</span>.</p>
             </div>
         </div>
     `;

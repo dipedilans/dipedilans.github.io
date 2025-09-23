@@ -10,15 +10,22 @@ function loadSkills() {
     if (!skillsGrid) return;
 
     const skills = [
-        { name: 'Frontend Development', icon: '🎨', level: 80, techs: ['HTML5', 'CSS3', 'JavaScript'] },
-        { name: 'Backend Development', icon: '⚙️', level: 85, techs: ['Python', 'Node.js'] },
-        { name: 'Data & Analytics', icon: '📊', level: 80, techs: ['SQL', 'Pandas'] },
-        { name: 'DevOps & Cloud', icon: '☁️', level: 75, techs: ['Docker', 'Azure', 'Terraform'] },
-        { name: 'Version Control', icon: '🔀', level: 95, techs: ['Git', 'GitHub'] },
-        { name: 'Agile Methodologies', icon: '🔄', level: 85, techs: ['Scrum', 'Kanban'] }
+        { name: 'Frontend Development', icon: '🎨', level: 90, techs: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS'] },
+        { name: 'Backend Development', icon: '⚙️', level: 85, techs: ['Node.js', 'Python', 'Django', 'Express'] },
+        { name: 'Database Management', icon: '🗄️', level: 80, techs: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL'] },
+        { name: 'Cloud & DevOps', icon: '☁️', level: 75, techs: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
+        { name: 'Data Science & ML', icon: '🤖', level: 70, techs: ['TensorFlow', 'Pandas', 'Scikit-learn', 'Jupyter'] },
+        { name: 'Mobile Development', icon: '📱', level: 65, techs: ['React Native', 'Flutter', 'iOS', 'Android'] },
+        { name: 'Version Control', icon: '🔀', level: 95, techs: ['Git', 'GitHub', 'GitLab', 'CI/CD'] },
+        { name: 'UI/UX Design', icon: '🎯', level: 70, techs: ['Figma', 'Adobe XD', 'Responsive Design'] },
+        { name: 'Testing & QA', icon: '🧪', level: 80, techs: ['Jest', 'Cypress', 'Selenium', 'Unit Testing'] },
+        { name: 'Agile & Scrum', icon: '🔄', level: 85, techs: ['Jira', 'Scrum Master', 'Kanban', 'Sprint Planning'] }
     ];
 
-    skillsGrid.innerHTML = skills.map(skill => `
+    // Show only 6 skills on homepage, all on skills page
+    const skillsToShow = window.location.pathname.includes('skills.html') ? skills : skills.slice(0, 6);
+
+    skillsGrid.innerHTML = skillsToShow.map(skill => `
         <div class="skill-card reveal">
             <div class="skill-card__icon">${skill.icon}</div>
             <h3 class="skill-card__title">${skill.name}</h3>

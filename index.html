@@ -47,8 +47,8 @@
                     <h1 class="hero__title">Diogo Silva</h1>
                     <div class="hero__tagline" id="heroTagline"></div>
                     <div class="hero__cta">
-                        <a href="projects.html" class="btn btn--primary">View Projects</a>
-                        <a href="assets/docs/cv.pdf" class="btn btn--secondary" download>Download CV</a>
+                        <a href="projects.html" class="btn btn--primary" data-i18n="hero.cta.projects">View Projects</a>
+                        <a href="assets/docs/cv.pdf" class="btn btn--secondary" download data-i18n="hero.cta.cv">Download CV</a>
                     </div>
                 </div>
                 <div class="scroll-indicator" aria-label="Scroll down">
@@ -60,20 +60,24 @@
         </section>
 
         <!-- About Preview -->
-        <section id="about-preview" class="section about-preview">
+        <section id="about-preview" class="section about-preview reveal">
             <div class="container">
                 <div class="about-preview__grid">
                     <div class="about-preview__content">
-                        <h2 class="section__title">About Me</h2>
+                        <h2 class="section__title" data-i18n="about.title">About Me</h2>
                         <p class="section__text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Passionate Full-Stack Developer with 3+ years of experience building scalable web applications and data-driven solutions.
+                            Specialized in modern JavaScript frameworks, Python ecosystems, and cloud architectures.
+                            I transform complex business requirements into elegant, performant digital solutions that drive real value.
                         </p>
                         <ul class="about-preview__highlights">
-                            <li>Full-Stack Development</li>
-                            <li>Cloud Architecture</li>
-                            <li>Data Analytics</li>
+                            <li>🚀 Full-Stack Development with React, Node.js & Python</li>
+                            <li>☁️ Cloud Architecture on AWS & Azure</li>
+                            <li>📊 Data Analytics & Machine Learning</li>
+                            <li>🔧 DevOps & CI/CD Pipeline Automation</li>
+                            <li>📱 Responsive & Accessible Web Design</li>
                         </ul>
-                        <a href="about.html" class="btn btn--ghost">Read Full Story →</a>
+                        <a href="about.html" class="btn btn--ghost" data-i18n="about.readMore">Read Full Story →</a>
                     </div>
                     <div class="about-preview__visual">
                         <img src="assets/images/profile.png" alt="Diogo Silva" class="about-preview__image">
@@ -85,13 +89,43 @@
         <!-- Skills Highlights -->
         <section id="skills-highlights" class="section skills-highlights">
             <div class="container">
-                <h2 class="section__title">Core Competencies</h2>
-                <p class="section__subtitle">Technologies I work with daily</p>
+                <h2 class="section__title" data-i18n="skills.title">Core Competencies</h2>
+                <p class="section__subtitle" data-i18n="skills.subtitle">Technologies I work with daily</p>
                 <div class="skills-grid">
                     <!-- Skills cards serão adicionados via JavaScript -->
                 </div>
                 <div class="section__cta">
-                    <a href="skills.html" class="btn btn--primary">View All Skills</a>
+                    <a href="skills.html" class="btn btn--primary" data-i18n="skills.viewAll">View All Skills</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section achievements">
+            <div class="container">
+                <h2 class="section__title" data-i18n="achievements.title">Achievements & Impact</h2>
+                <p class="section__subtitle" data-i18n="achievements.subtitle">Numbers that speak for themselves</p>
+                <div class="achievements__grid">
+                    <div class="achievement-card reveal">
+                        <div class="achievement-card__icon">🚀</div>
+                        <div class="achievement-card__number" data-counter="25">0</div>
+                        <div class="achievement-card__label" data-i18n="achievements.projects">Projects Completed</div>
+                    </div>
+                    <div class="achievement-card reveal">
+                        <div class="achievement-card__icon">💻</div>
+                        <div class="achievement-card__number" data-counter="15">0</div>
+                        <div class="achievement-card__label" data-i18n="achievements.technologies">Technologies Mastered</div>
+                    </div>
+                    <div class="achievement-card reveal">
+                        <div class="achievement-card__icon">⏱️</div>
+                        <div class="achievement-card__number" data-counter="3">0</div>
+                        <div class="achievement-card__label" data-i18n="achievements.experience">Years Experience</div>
+                    </div>
+                    <div class="achievement-card reveal">
+                        <div class="achievement-card__icon">⭐</div>
+                        <div class="achievement-card__number" data-counter="100">0</div>
+                        <div class="achievement-card__label" data-i18n="achievements.satisfaction">Client Satisfaction %</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -99,13 +133,85 @@
         <!-- Featured Projects -->
         <section id="featured-projects" class="section featured-projects">
             <div class="container">
-                <h2 class="section__title">Recent Work</h2>
-                <p class="section__subtitle">Selected projects showcasing my skills</p>
+                <h2 class="section__title" data-i18n="projects.title">Recent Work</h2>
+                <p class="section__subtitle" data-i18n="projects.subtitle">Selected projects showcasing my skills</p>
                 <div class="projects-grid">
                     <!-- Project cards serão adicionados via JavaScript -->
                 </div>
                 <div class="section__cta">
-                    <a href="projects.html" class="btn btn--primary">Explore All Projects</a>
+                    <a href="projects.html" class="btn btn--primary" data-i18n="projects.viewAll">Explore All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section testimonials">
+            <div class="container">
+                <h2 class="section__title" data-i18n="testimonials.title">What People Say</h2>
+                <p class="section__subtitle" data-i18n="testimonials.subtitle">Feedback from clients and colleagues</p>
+                <div class="testimonials__carousel">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-card__content">
+                            <p class="testimonial-card__quote">
+                                "Diogo delivered an exceptional e-commerce platform that exceeded our expectations.
+                                His technical expertise and attention to detail transformed our business operations."
+                            </p>
+                        </div>
+                        <div class="testimonial-card__author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Santos" class="testimonial-card__avatar">
+                            <div class="testimonial-card__info">
+                                <h4 class="testimonial-card__name">João Santos</h4>
+                                <p class="testimonial-card__role">CEO, TechStart Lisboa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__content">
+                            <p class="testimonial-card__quote">
+                                "Working with Diogo was a game-changer. He not only built our data analytics dashboard
+                                but also provided valuable insights that helped us make better business decisions."
+                            </p>
+                        </div>
+                        <div class="testimonial-card__author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Costa" class="testimonial-card__avatar">
+                            <div class="testimonial-card__info">
+                                <h4 class="testimonial-card__name">Maria Costa</h4>
+                                <p class="testimonial-card__role">Product Manager, DataFlow</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__content">
+                            <p class="testimonial-card__quote">
+                                "Diogo's expertise in cloud architecture helped us reduce our infrastructure costs by 40%
+                                while improving performance. Highly recommended!"
+                            </p>
+                        </div>
+                        <div class="testimonial-card__author">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Pedro Alves" class="testimonial-card__avatar">
+                            <div class="testimonial-card__info">
+                                <h4 class="testimonial-card__name">Pedro Alves</h4>
+                                <p class="testimonial-card__role">CTO, CloudSolutions PT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials__controls">
+                    <button class="testimonial-control testimonial-control--prev" aria-label="Previous testimonial">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="testimonials__dots">
+                        <span class="testimonial-dot active" data-slide="0"></span>
+                        <span class="testimonial-dot" data-slide="1"></span>
+                        <span class="testimonial-dot" data-slide="2"></span>
+                    </div>
+                    <button class="testimonial-control testimonial-control--next" aria-label="Next testimonial">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -113,11 +219,11 @@
         <!-- Contact CTA -->
         <section id="contact-cta" class="section contact-cta">
             <div class="container">
-                <h2 class="contact-cta__title">Let's Work Together</h2>
-                <p class="contact-cta__text">Have a project in mind? Let's talk!</p>
+                <h2 class="contact-cta__title" data-i18n="contact.title">Let's Work Together</h2>
+                <p class="contact-cta__text" data-i18n="contact.subtitle">Have a project in mind? Let's talk!</p>
                 <div class="contact-cta__buttons">
-                    <a href="contact.html" class="btn btn--primary btn--large">Get In Touch</a>
-                    <a href="#" class="btn btn--secondary btn--large">Schedule Call</a>
+                    <a href="contact.html" class="btn btn--primary btn--large" data-i18n="contact.button">Get In Touch</a>
+                    <a href="https://calendly.com/diogo-silva" class="btn btn--secondary btn--large" data-i18n="contact.schedule">Schedule Call</a>
                 </div>
             </div>
         </section>

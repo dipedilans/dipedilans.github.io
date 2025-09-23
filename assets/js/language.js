@@ -1,6 +1,6 @@
 // Language Module - PT/EN toggle
 
-let currentLanguage = localStorage.getItem('language') || 'en';
+let currentLanguage = localStorage.getItem('language') || 'pt';
 
 export function initLanguage() {
     const languageToggle = document.getElementById('languageToggle');
@@ -15,6 +15,11 @@ export function initLanguage() {
             localStorage.setItem('language', currentLanguage);
         });
     }
+
+    // Apply translations immediately after DOM updates
+    setTimeout(() => {
+        setLanguage(currentLanguage);
+    }, 100);
 }
 
 function setLanguage(lang) {
