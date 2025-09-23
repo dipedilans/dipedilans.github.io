@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Projects - Diogo Silva">
+    <meta name="author" content="Diogo Silva">
+    <title>Projects - Diogo Silva</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/pages/projects.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header será carregado dinamicamente -->
+    <header id="header" class="header"></header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-hero__title">Projects</h1>
+                <p class="page-hero__subtitle">My portfolio of work</p>
+            </div>
+        </section>
+
+        <!-- Projects Filters -->
+        <section class="section projects-filters">
+            <div class="container">
+                <div class="filters">
+                    <input type="text" class="filters__search" placeholder="Search projects...">
+                    <div class="filters__tags">
+                        <button class="filter-tag active" data-filter="all">All</button>
+                        <button class="filter-tag" data-filter="web">Web</button>
+                        <button class="filter-tag" data-filter="mobile">Mobile</button>
+                        <button class="filter-tag" data-filter="data">Data</button>
+                        <button class="filter-tag" data-filter="devops">DevOps</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="section projects-grid">
+            <div class="container">
+                <div class="projects__grid" id="projectsGrid">
+                    <!-- Project cards serão adicionados via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer será carregado dinamicamente -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" type="module"></script>
+</body>
+</html>

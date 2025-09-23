@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page Not Found - Diogo Silva">
+    <meta name="author" content="Diogo Silva">
+    <title>404 - Page Not Found</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/pages/404.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header será carregado dinamicamente -->
+    <header id="header" class="header"></header>
+
+    <main>
+        <!-- 404 Content -->
+        <section class="error-page">
+            <div class="container">
+                <div class="error-page__content">
+                    <h1 class="error-page__code">404</h1>
+                    <h2 class="error-page__title">Page Not Found</h2>
+                    <p class="error-page__text">Oops! The page you're looking for doesn't exist.</p>
+
+                    <div class="error-page__search">
+                        <input type="text" placeholder="Search for something..." class="search-input">
+                        <button class="btn btn--primary">Search</button>
+                    </div>
+
+                    <div class="error-page__actions">
+                        <a href="index.html" class="btn btn--primary">Go Home</a>
+                        <a href="projects.html" class="btn btn--secondary">View Projects</a>
+                    </div>
+
+                    <div class="error-page__suggestions">
+                        <h3>Popular Pages:</h3>
+                        <ul>
+                            <li><a href="about.html">About Me</a></li>
+                            <li><a href="skills.html">Skills</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer será carregado dinamicamente -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" type="module"></script>
+</body>
+</html>

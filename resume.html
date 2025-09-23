@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume - Diogo Silva">
+    <meta name="author" content="Diogo Silva">
+    <title>Resume - Diogo Silva</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/pages/resume.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header será carregado dinamicamente -->
+    <header id="header" class="header"></header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-hero__title">Resume</h1>
+                <p class="page-hero__subtitle">My professional experience</p>
+                <a href="assets/docs/cv.pdf" class="btn btn--primary" download>
+                    <span>Download PDF</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Resume Content -->
+        <section class="section resume-content">
+            <div class="container resume-container">
+                <div class="resume">
+                    <!-- Professional Summary -->
+                    <div class="resume__section">
+                        <h2 class="resume__heading">Professional Summary</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="resume__section">
+                        <h2 class="resume__heading">Experience</h2>
+                        <div class="resume__timeline">
+                            <!-- Experience items serão adicionados via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="resume__section">
+                        <h2 class="resume__heading">Education</h2>
+                        <div class="resume__timeline">
+                            <!-- Education items serão adicionados via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="resume__section">
+                        <h2 class="resume__heading">Certifications</h2>
+                        <div class="resume__certifications">
+                            <!-- Certifications serão adicionadas via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="resume__section">
+                        <h2 class="resume__heading">Languages</h2>
+                        <ul class="resume__languages">
+                            <li>Portuguese - Native</li>
+                            <li>English - Fluent</li>
+                            <li>Spanish - Basic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer será carregado dinamicamente -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" type="module"></script>
+</body>
+</html>
