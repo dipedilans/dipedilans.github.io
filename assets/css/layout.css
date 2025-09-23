@@ -106,15 +106,21 @@
     color: var(--text-primary);
 }
 
-/* Progress Bar */
-.header__progress {
-    position: absolute;
-    bottom: 0;
+/* Progress Bar - Now independent from header */
+.progress-bar {
+    position: fixed;
+    top: var(--header-height); /* Below header by default */
     left: 0;
     width: 0%;
     height: 3px;
     background: linear-gradient(90deg, var(--primary-400), var(--primary-600));
-    transition: width var(--transition-base);
+    transition: width var(--transition-base), top var(--transition-base);
+    z-index: calc(var(--z-header) - 1); /* Just below header */
+}
+
+/* When header is hidden, progress bar moves to top */
+.progress-bar--top {
+    top: 0;
 }
 
 /* Mobile Menu Toggle */

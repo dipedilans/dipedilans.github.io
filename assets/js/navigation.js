@@ -31,9 +31,17 @@ export function initHeader() {
                     if (scrollTop > lastScrollTop && scrollTop > 100) {
                         // Scrolling down & past 100px - hide header
                         header.classList.add('header--hidden');
+                        // Move progress bar to top when header is hidden
+                        if (progressBar) {
+                            progressBar.classList.add('progress-bar--top');
+                        }
                     } else {
                         // Scrolling up - show header
                         header.classList.remove('header--hidden');
+                        // Move progress bar below header when header is visible
+                        if (progressBar) {
+                            progressBar.classList.remove('progress-bar--top');
+                        }
                     }
                     lastScrollTop = scrollTop;
                 }
@@ -64,6 +72,10 @@ export function initHeader() {
         // Always visible at page top
         if (scrollTop === 0) {
             header.classList.remove('header--hidden');
+            // Ensure progress bar is below header when at top
+            if (progressBar) {
+                progressBar.classList.remove('progress-bar--top');
+            }
         }
     }
 

@@ -4,113 +4,130 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio website project built with vanilla HTML, CSS, and JavaScript. The project follows a multi-page architecture without frameworks to focus on performance and fundamentals.
+This is a multi-page portfolio website for Diogo Silva built with vanilla HTML, CSS, and JavaScript (ES6+ modules). The project follows the specifications in PRD.md and uses a clean, modern blue color palette with light/dark theme support.
 
-## Project Structure
+## Architecture & Structure
 
-```
-/
-├── index.html          (Homepage)
-├── about.html          (About Me)
-├── skills.html         (Skills & Technologies)
-├── projects.html       (Portfolio)
-├── resume.html         (CV/Resume)
-├── contact.html        (Contact)
-├── 404.html           (Error Page)
-├── /assets
-│   ├── /css           (Stylesheets)
-│   ├── /js            (JavaScript modules)
-│   ├── /images        (Images and media)
-│   └── /docs          (CV/Resume PDFs)
-└── /data
-    ├── translations.json  (i18n content)
-    └── projects.json      (Project data)
-```
+### Technology Stack
+- **Frontend Only**: Pure HTML5, CSS3, JavaScript (ES6 modules)
+- **No Build Tools**: Direct browser execution, no compilation step
+- **External Library**: EmailJS for contact form only
+- **Assets**: Images at `/assets/images/`, CV at `/assets/docs/cv.pdf`
+
+### Module Architecture
+The JavaScript architecture uses ES6 modules with a main entry point that orchestrates initialization:
+- `main.js` - Central coordinator that loads components and initializes features
+- Each feature (navigation, theme, language, etc.) is a separate module
+- Page-specific initialization based on current URL
+- Dynamic header/footer injection via JavaScript templates
+
+### CSS Organization
+CSS is split into logical layers:
+- `reset.css` - Normalize browser defaults
+- `variables.css` - CSS custom properties for theming
+- `base.css` - Global element styles
+- `layout.css` - Structural components
+- `components.css` - Reusable UI components
+- `utilities.css` - Utility classes
+- `animations.css` - Animation definitions
+- `pages/*.css` - Page-specific styles
 
 ## Development Commands
 
-Since this is a vanilla HTML/CSS/JS project without a build system yet:
-
+### Local Development
+Since this is a static site with no build process:
 ```bash
-# Start a local development server (if Python is installed)
+# Start a local server (using Python)
 python3 -m http.server 8000
-# or
-python -m SimpleHTTPServer 8000
 
-# For live reload during development (if Node.js is available)
-npx live-server
+# Or using Node.js http-server (if installed)
+npx http-server -p 8000
 
-# No build/compile steps required - direct file editing
+# Or using VS Code Live Server extension
+# Right-click on index.html and select "Open with Live Server"
 ```
 
-## Architecture & Key Components
-
-### Global Components
-- **Smart Header**: Auto-hide on scroll down, show on scroll up, with progress bar
-- **Footer**: 3-column layout with brand, quick links, and social
-- **Theme Switcher**: Light/dark mode with localStorage persistence
-- **Language Toggle**: PT/EN support via translations.json
-
-### CSS Architecture
-- BEM naming convention
-- CSS custom properties for theming
-- Mobile-first responsive design
-- Modular file structure (reset, variables, base, components, utilities, pages)
-
-### JavaScript Modules
-- `main.js` - App initialization
-- `navigation.js` - Header behavior and menu
-- `theme.js` - Dark/light mode switching
-- `language.js` - i18n handling
-- `animations.js` - Scroll animations and typewriter effects
-- `projects.js` - Project filtering and search
-- `contact.js` - Form validation and EmailJS integration
-- `utils.js` - Helper functions
-
-### Design System
-- **Primary Color**: Blue theme (#2196f3 base)
-- **Typography**: Inter font family
-- **Spacing**: 4px base unit system
-- **Breakpoints**: 768px (tablet), 1024px (desktop)
-
-## Development Guidelines
-
-1. **Simplicity First**: Keep solutions simple and avoid over-engineering
-2. **Performance**: Optimize images, lazy load content, minimize CSS/JS
-3. **Accessibility**: WCAG 2.1 Level AA compliance, semantic HTML, ARIA labels
-4. **Progressive Enhancement**: Core functionality works without JavaScript
-5. **Mobile-First**: Design for mobile, enhance for desktop
-6. **Clean Commits**: Use conventional commit format (feat:, fix:, style:, etc.)
-
-## Key Features to Implement
-
-1. **Hero Section**: Typewriter effect with multi-language greeting
-2. **Smooth Scroll**: Between sections with progress indicator
-3. **Project Filtering**: Real-time search and category filters
-4. **Contact Form**: EmailJS integration with validation
-5. **Lazy Loading**: Images and below-fold content
-6. **Scroll Animations**: Using Intersection Observer
-7. **LocalStorage**: Save theme and language preferences
-
-## Testing Checklist
-
+### Testing
+No automated tests are configured. Manual testing required:
 - Cross-browser compatibility (Chrome, Firefox, Safari, Edge)
-- Mobile responsiveness (320px to 2560px)
-- Form validation and submission
-- Theme switching persistence
-- Performance (PageSpeed Insights > 90)
-- Accessibility (keyboard navigation, screen readers)
+- Mobile responsiveness (320px minimum width)
+- Theme switching (light/dark modes)
+- Language switching (PT/EN via translations.json)
 
-## External Resources
+### Deployment
+The site is designed for static hosting:
+- GitHub Pages: Push to main branch
+- Netlify: Drag and drop the folder
+- Any static file server
 
-- **EmailJS**: For contact form functionality
-- **Google Fonts**: Inter font family
-- **Images**: Use Unsplash/Pexels for placeholders
-- **Icons**: Heroicons or Feather Icons
+## Key Implementation Details
 
-## Important Notes
+### Multi-language Support
+- Translations stored in `/data/translations.json`
+- Elements use `data-i18n` attributes for translation keys
+- Language preference saved to localStorage
+- Default language: Portuguese (pt)
 
-- No package.json yet - project uses vanilla technologies
-- CV/Resume PDF should be stored at `/assets/docs/cv.pdf`
-- All content placeholders use Lorem Ipsum until real content is provided
-- Follow the PRD.md for detailed specifications and implementation phases
+### Theme System
+- CSS variables define color schemes
+- Theme preference saved to localStorage
+- Respects system preference initially
+- Smooth transitions between themes (300ms)
+
+### Header Behavior
+- Smart scroll: hides on scroll down, shows on scroll up
+- Progress bar shows page scroll percentage
+- Mobile menu with hamburger toggle
+- Active page highlighting in navigation
+
+### Page-specific Features
+- **Homepage**: Hero with typewriter effect, skills grid, project cards, testimonials carousel
+- **Projects**: Filterable project grid with category tags
+- **Contact**: Form with EmailJS integration
+- **About**: Timeline and personal story
+- **Skills**: Categorized skill display with proficiency indicators
+
+### Animation System
+- Intersection Observer for scroll-triggered animations
+- Counter animations for achievement numbers
+- Smooth reveal animations with `.reveal` class
+- Typewriter effect for hero section taglines
+
+## Common Tasks
+
+### Adding a New Project
+1. If using dynamic loading, update the projects data structure in `projects.js`
+2. Add project images to `/assets/images/`
+3. Include proper tags for filtering functionality
+
+### Updating Translations
+Edit `/data/translations.json` with new key-value pairs for both `pt` and `en` languages
+
+### Modifying Theme Colors
+Update CSS variables in `variables.css`, particularly:
+- Light theme: `:root` variables
+- Dark theme: `[data-theme="dark"]` overrides
+- Primary blue scale: `--primary-*` variables
+
+### Contact Form Setup
+The contact form uses EmailJS. To configure:
+1. Set up EmailJS account and template
+2. Update the service ID and template ID in `contact.js`
+3. Test form submission thoroughly
+
+## Important Files
+
+- `PRD.md` - Complete product requirements and specifications
+- `/data/translations.json` - All UI text translations
+- `/assets/docs/cv.pdf` - Resume/CV file for download
+- `/assets/images/profile.png` - Main profile image
+
+## Code Conventions
+
+- BEM naming for CSS classes (`.block__element--modifier`)
+- Semantic HTML5 elements throughout
+- Mobile-first responsive design
+- CSS custom properties for all colors and spacing
+- ES6+ JavaScript with modules
+- Async/await for asynchronous operations
+- Event delegation where appropriate

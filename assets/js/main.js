@@ -41,6 +41,12 @@ async function loadGlobalComponents() {
     const headerElement = document.getElementById('header');
     if (headerElement) {
         headerElement.innerHTML = getHeaderHTML();
+
+        // Add progress bar as a separate element after header
+        const progressBar = document.createElement('div');
+        progressBar.className = 'progress-bar';
+        progressBar.id = 'progressBar';
+        document.body.insertBefore(progressBar, document.body.firstChild);
     }
 
     // Load footer
@@ -136,9 +142,6 @@ function getHeaderHTML() {
                 </button>
             </div>
         </div>
-
-        <!-- Progress bar -->
-        <div class="header__progress" id="progressBar"></div>
 
         <!-- Mobile navigation -->
         <nav class="nav--mobile" id="mobileNav">
